@@ -36,7 +36,7 @@ namespace LaboratorioArlissonMenacho
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
-            var conexaoString = @"Server=LAB04-18;Integrated Security=true;Initial Catalog=bd_laboratorio;";
+            var conexaoString = @"Server=DESKTOP-QB59URO;Integrated Security=true;Initial Catalog=bd_laboratorio;";
             services.AddDbContext<LaboratorioContexto>(options=>options.UseSqlServer(conexaoString));
 
             ////isso serve para localizar o BD como BDLocal independente de onde for.
@@ -45,7 +45,7 @@ namespace LaboratorioArlissonMenacho
             //var conexaoString = String.Format(@"Server=(localbd)/MSSQLLocalBD;Initial Catalog=LaboratorioBD;Integrated Security = SSPI;AttachDBFilename={0}\Banco_Lab.mdf",caminhoDoBanco);
 
             ////Adicionando o contexto do banco 
-           services.AddDbContext<LaboratorioArlissonMenacho.Contexto.LaboratorioContexto>(options => options.UseSqlServer(conexaoString));
+          // services.AddDbContext<LaboratorioArlissonMenacho.Contexto.LaboratorioContexto>(options => options.UseSqlServer(conexaoString));
 
             // Injeção de dependencia de Paciente
             services.AddTransient<Repositories.PacienteRepository,Repositories.PacienteRepository>();

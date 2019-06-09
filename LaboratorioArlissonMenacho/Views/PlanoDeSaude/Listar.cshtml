@@ -3,7 +3,7 @@
 @{
     ViewData["Title"] = "Listar";
 }
-
+@*esse é do Json*@
 <h2>Listar</h2>
 
 <p>
@@ -30,11 +30,7 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Descricao)
             </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-            </td>
+           
         </tr>
 }
     </tbody>

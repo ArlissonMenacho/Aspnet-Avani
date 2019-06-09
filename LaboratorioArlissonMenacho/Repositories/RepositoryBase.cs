@@ -1,4 +1,5 @@
 ﻿using LaboratorioArlissonMenacho.Contexto;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,6 +24,7 @@ namespace LaboratorioArlissonMenacho.Repositories
         }
         public void Delete(Tentity T)
         {
+
             db.Set<Tentity>().Remove(T);
             db.SaveChanges();
         }
@@ -33,6 +35,11 @@ namespace LaboratorioArlissonMenacho.Repositories
         public Tentity GetById(int id)
         {
             return db.Set<Tentity>().Find(id);
+        }
+        public void Update(Tentity T)
+        {
+            db.Entry(T).State = EntityState.Modified;
+            db.SaveChanges();
         }
 
         public void Dispose()

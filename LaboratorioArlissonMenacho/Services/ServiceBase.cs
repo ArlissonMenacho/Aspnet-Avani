@@ -25,6 +25,10 @@ namespace LaboratorioArlissonMenacho.Services
         {
             repository.Add(t);
         }
+        public void Alterar(Tentity T)
+        {
+            repository.Update(T);
+        }
 
         public void Apagar(Tentity t)
         {

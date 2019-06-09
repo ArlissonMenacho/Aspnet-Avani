@@ -45,7 +45,7 @@ namespace LaboratorioArlissonMenacho
             //var conexaoString = String.Format(@"Server=(localbd)/MSSQLLocalBD;Initial Catalog=LaboratorioBD;Integrated Security = SSPI;AttachDBFilename={0}\Banco_Lab.mdf",caminhoDoBanco);
 
             ////Adicionando o contexto do banco 
-           services.AddDbContext<LaboratorioArlissonMenacho.Contexto.LaboratorioContexto>(options => options.UseSqlServer(conexaoString));
+          // services.AddDbContext<LaboratorioArlissonMenacho.Contexto.LaboratorioContexto>(options => options.UseSqlServer(conexaoString));
 
             // Injeção de dependencia de Paciente
             services.AddTransient<Repositories.PacienteRepository,Repositories.PacienteRepository>();

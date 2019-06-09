@@ -50,18 +50,9 @@ namespace LaboratorioArlissonMenacho.Controllers
             return View(plano);
 
         }
-        public IActionResult Excluir(int id)
+        public IActionResult Excluir()
         {
-            PlanoDeSaude plano = new PlanoDeSaude();
-                service.buscarPorId(id);
-                return View(plano);
-
-        }
-        [HttpPost]
-        public IActionResult Excluir(PlanoDeSaude plano)
-        {
-            service.Apagar(plano);
-            return RedirectToAction("lista");
+            return View();
         }
 
 

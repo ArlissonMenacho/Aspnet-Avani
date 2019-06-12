@@ -21,13 +21,14 @@ namespace Montadora_Arlisson_Menacho.Migrations
 
             modelBuilder.Entity("Montadora_Arlisson_Menacho.Models.Cidade", b =>
                 {
-                    b.Property<int>("Cidadeid")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Nome");
+                    b.Property<string>("Nome")
+                        .IsRequired();
 
-                    b.HasKey("Cidadeid");
+                    b.HasKey("Id");
 
                     b.ToTable("Cidades");
                 });
@@ -84,12 +85,14 @@ namespace Montadora_Arlisson_Menacho.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Cpf");
+                    b.Property<string>("Cpf")
+                        .IsRequired();
 
                     b.Property<string>("Discriminator")
                         .IsRequired();
 
-                    b.Property<string>("Nome");
+                    b.Property<string>("Nome")
+                        .IsRequired();
 
                     b.HasKey("Id");
 
@@ -121,11 +124,14 @@ namespace Montadora_Arlisson_Menacho.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Categoria");
+                    b.Property<string>("Categoria")
+                        .IsRequired();
 
-                    b.Property<string>("Marca");
+                    b.Property<string>("Marca")
+                        .IsRequired();
 
-                    b.Property<string>("Modelo");
+                    b.Property<string>("Modelo")
+                        .IsRequired();
 
                     b.Property<int?>("ObjClienteId");
 
@@ -150,17 +156,21 @@ namespace Montadora_Arlisson_Menacho.Migrations
 
                     b.Property<DateTime>("DataNascimento");
 
-                    b.Property<string>("Endereco");
+                    b.Property<string>("Endereco")
+                        .IsRequired();
 
-                    b.Property<string>("Numero");
+                    b.Property<string>("Numero")
+                        .IsRequired();
 
-                    b.Property<int?>("ObjCidadeCidadeid");
+                    b.Property<int?>("ObjCidadeId");
 
-                    b.Property<string>("Orgaoexpedidor");
+                    b.Property<string>("Orgaoexpedidor")
+                        .IsRequired();
 
-                    b.Property<string>("Rg");
+                    b.Property<string>("Rg")
+                        .IsRequired();
 
-                    b.HasIndex("ObjCidadeCidadeid");
+                    b.HasIndex("ObjCidadeId");
 
                     b.HasDiscriminator().HasValue("Cliente");
                 });
@@ -170,6 +180,7 @@ namespace Montadora_Arlisson_Menacho.Migrations
                     b.HasBaseType("Montadora_Arlisson_Menacho.Models.Pessoa");
 
                     b.Property<string>("Endereco")
+                        .IsRequired()
                         .HasColumnName("Fornecedor_Endereco");
 
                     b.HasDiscriminator().HasValue("Fornecedor");
@@ -221,7 +232,7 @@ namespace Montadora_Arlisson_Menacho.Migrations
                 {
                     b.HasOne("Montadora_Arlisson_Menacho.Models.Cidade", "ObjCidade")
                         .WithMany()
-                        .HasForeignKey("ObjCidadeCidadeid");
+                        .HasForeignKey("ObjCidadeId");
                 });
 #pragma warning restore 612, 618
         }

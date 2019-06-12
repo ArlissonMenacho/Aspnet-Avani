@@ -1,0 +1,37 @@
+﻿@model Montadora_Arlisson_Menacho.Models.Fornecedor
+
+@{
+    ViewData["Title"] = "Excluir";
+}
+
+<h2>Exclusão de Fornecedor</h2>
+
+<h3>Você tem certeza que quer excluir esse fornecedor?</h3>
+<div>
+
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Endereco)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Endereco)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Cpf)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Cpf)
+        </dd>             
+        <dt>
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+    </dl>
+    
+    <form asp-action="Excluir">
+        <input type="submit" value="Delete" class="btn btn-default" />         
+    </form>
+</div>

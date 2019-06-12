@@ -42,23 +42,32 @@ namespace Montadora_Arlisson_Menacho
 
 
             ///isso serve para localizar o BD como BDLocal independente de onde for.
-            var caminhoDoBanco = System.IO.Path.Combine(System.IO.Directory.GetCurrentDirectory());
+            // var caminhoDoBanco = System.IO.Path.Combine(System.IO.Directory.GetCurrentDirectory());
             //// Conexão com BD
-            var conexaoString = String.Format(@"Server=(localbd)/MSSQLLocalBD;Initial Catalog=Montadora;Integrated Security = SSPI;AttachDBFilename={0}\Banco_Lab.mdf", caminhoDoBanco);
-
+            // var conexaoString = String.Format(@"Server=(localbd)/MSSQLLocalBD;Initial Catalog=Montadora;Integrated Security = SSPI;AttachDBFilename={0}\Banco_Lab.mdf", caminhoDoBanco);
+            var conexaoString = @"Server=DESKTOP-QB59URO;Integrated Security=true;Initial Catalog=bd_montadora;";
             services.AddDbContext<Montadora_Arlisson_Menacho.Contexto.MontadoraContexto>(options => options.UseSqlServer(conexaoString));
 
             services.AddTransient<MontadorRepository, MontadorRepository>();
-            services.AddTransient<CidadeRepository, CidadeRepository>();
-            services.AddTransient<MontadorRepository, MontadorRepository>();
+            services.AddTransient<CidadeRepository, CidadeRepository>();           
             services.AddTransient<PecaRepository, PecaRepository>();
             services.AddTransient<PecaDoVeiculoRepository,PecaDoVeiculoRepository>();
             services.AddTransient<PessoaRepository,PessoaRepository>();
             services.AddTransient<ClienteRespository, ClienteRespository>();
             services.AddTransient<FornecedorRepository, FornecedorRepository>();
             services.AddTransient<UsuarioRepository,UsuarioRepository>();
-            services.AddTransient<VeiculoRepository,VeiculoRepository>();         
-
+            services.AddTransient<VeiculoRepository,VeiculoRepository>();
+            
+            services.AddTransient<MontadorServices, MontadorServices>();
+            services.AddTransient<CidadeServices, CidadeServices>();
+            services.AddTransient<PecaServices, PecaServices>();
+            services.AddTransient<PecaDoVeiculoServices, PecaDoVeiculoServices>();
+            services.AddTransient<PessoaServices, PessoaServices>();
+            services.AddTransient<ClienteServices, ClienteServices>();
+            services.AddTransient<FornecedorServices,FornecedorServices>();
+            services.AddTransient<UsuarioServices, UsuarioServices>();
+            services.AddTransient<VeiculoServices, VeiculoServices>();
+           
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

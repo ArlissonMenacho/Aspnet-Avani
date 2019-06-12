@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -11,6 +12,8 @@ namespace Montadora_Arlisson_Menacho.Models
         private int id;
         private string nome;
 
+        [Required]
+        [Display(Name = "CPF")]
         public string Cpf
         {
             get => cpf;
@@ -21,6 +24,8 @@ namespace Montadora_Arlisson_Menacho.Models
             get => id;
             set => id = value;
         }
+        [Required]
+        [Display(Name = "Nome")]
         public string Nome
         {
             get => nome;

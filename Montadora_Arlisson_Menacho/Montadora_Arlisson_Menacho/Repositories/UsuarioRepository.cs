@@ -7,35 +7,13 @@ using Montadora_Arlisson_Menacho.Models;
 
 namespace Montadora_Arlisson_Menacho.Repositories
 {
-    public class UsuarioRepository
+    public class UsuarioRepository : RepositoryBase<Usuario>
     {
         private readonly MontadoraContexto db;
 
-        public UsuarioRepository(MontadoraContexto montadoraContexto)
+        public UsuarioRepository(MontadoraContexto montadoraContexto):base(montadoraContexto)
         {
             this.db = montadoraContexto;
-        }
-
-        public void Add(Usuario usuario)
-        {
-            db.Usuarios.Add(usuario);
-            db.SaveChanges();
-        }
-
-        public void Delete(Usuario usuario)
-        {
-            db.Usuarios.Remove(usuario);
-            db.SaveChanges();
-        }
-
-        public IList<Usuario> FindAll()
-        {
-            return db.Usuarios.ToList();
-        }
-
-        public Usuario GetbyId(int id)
-        {
-            return db.Usuarios.Find(id);
-        }
+        }        
     }
 }

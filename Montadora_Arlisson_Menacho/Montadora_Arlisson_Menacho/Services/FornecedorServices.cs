@@ -3,43 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Montadora_Arlisson_Menacho.Models;
+using Montadora_Arlisson_Menacho.Repositories;
 
 namespace Montadora_Arlisson_Menacho.Services
 {
-    public class FornecedorServices
+    public class FornecedorServices : ServiceBase<Fornecedor>
     {
-            private readonly FornecedorServices FornecedorRepository;
+            private readonly FornecedorRepository FornecedorRepository;
 
-            public FornecedorServices(FornecedorServices FornecedorRepository)
+            public FornecedorServices(FornecedorRepository FornecedorRepository):base(FornecedorRepository)
             {
                 this.FornecedorRepository = FornecedorRepository;
-            }
-
-            public void Add(Fornecedor fornecedor)
-            {
-                FornecedorRepository.Add(fornecedor);
-            }
-
-            public void Delete(Fornecedor fornecedor)
-            {
-                FornecedorRepository.Delete(fornecedor);
-            }
-
-            public IList<Fornecedor> FindAll()
-            {
-                return FornecedorRepository.FindAll();
-            }
-
-            public IList<Fornecedor> getByDescricao(String descricao)
-            {
-                return FornecedorRepository.getByDescricao(descricao);
-
-            }
-
-            public Fornecedor GetbyId(int id)
-            {
-                return FornecedorRepository.GetbyId(id);
-            }
+            }        
     }
     
 }

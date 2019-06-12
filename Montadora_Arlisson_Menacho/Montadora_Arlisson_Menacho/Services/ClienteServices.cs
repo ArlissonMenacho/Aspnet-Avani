@@ -3,43 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Montadora_Arlisson_Menacho.Models;
+using Montadora_Arlisson_Menacho.Repositories;
 
 namespace Montadora_Arlisson_Menacho.Services
 {
-    public class ClienteServices
+    public class ClienteServices : ServiceBase<Cliente>
     {      
-            private readonly ClienteServices ClienteRepository;
+            private readonly ClienteRespository clienteRepository;
 
-            public ClienteServices(ClienteServices ClienteRepository)
+            public ClienteServices(ClienteRespository clienteRepository):base(clienteRepository)
             {
-                this.ClienteRepository = ClienteRepository;
+                this.clienteRepository = clienteRepository;
             }
 
-            public void Add(Cliente cliente)
-            {
-                ClienteRepository.Add(cliente);
-            }
-
-            public void Delete(Cliente cliente)
-            {
-                ClienteRepository.Delete(cliente);
-            }
-
-            public IList<Cliente> FindAll()
-            {
-                return ClienteRepository.FindAll();
-            }
-
-            public IList<Cliente> getByDescricao(String descricao)
-            {
-                return ClienteRepository.getByDescricao(descricao);
-
-            }
-
-            public Cliente GetbyId(int id)
-            {
-                return ClienteRepository.GetbyId(id);
-            }
+            
         
     }
 }

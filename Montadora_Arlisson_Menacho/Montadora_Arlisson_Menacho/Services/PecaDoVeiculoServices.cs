@@ -8,39 +8,13 @@ using Montadora_Arlisson_Menacho.Repositories;
 
 namespace Montadora_Arlisson_Menacho.Services
 {
-    public class PecaDoVeiculoServices
+    public class PecaDoVeiculoServices : ServiceBase<PecaDoVeiculo>
     {
         private readonly PecaDoVeiculoRepository pecaDoVeiculoRepository;
 
-        public PecaDoVeiculoServices(PecaDoVeiculoRepository pecaDoVeiculoRepository)
+        public PecaDoVeiculoServices(PecaDoVeiculoRepository pecaDoVeiculoRepository):base(pecaDoVeiculoRepository)
         {
             this.pecaDoVeiculoRepository = pecaDoVeiculoRepository;
-        }
-
-        public void Add(PecaDoVeiculo pecaDoVeiculo)
-        {
-            pecaDoVeiculoRepository.Add(pecaDoVeiculo);
-        }
-
-        public void Delete(PecaDoVeiculo pecaDoVeiculo)
-        {
-            pecaDoVeiculoRepository.Delete(pecaDoVeiculo);
-        }
-
-        public IList<PecaDoVeiculo> FindAll()
-        {
-            return pecaDoVeiculoRepository.FindAll();
-        }
-
-        //public IList<PecaDoVeiculo> getByDescricao(String descricao)
-        //{
-        //    return pecaDoVeiculoRepository.getByDescricao(descricao);
-
-        //}
-
-        public PecaDoVeiculo GetbyId(int id)
-        {
-            return pecaDoVeiculoRepository.GetbyId(id);
         }
     }
 }

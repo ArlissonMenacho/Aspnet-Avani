@@ -8,33 +8,13 @@ using Montadora_Arlisson_Menacho.Repositories;
 
 namespace Montadora_Arlisson_Menacho.Services
 {
-    public class UsuarioServices
+    public class UsuarioServices : ServiceBase<Usuario>
     {
         private readonly UsuarioRepository usuarioRepository;
 
-        public UsuarioServices(UsuarioRepository usuarioRepository)
+        public UsuarioServices(UsuarioRepository usuarioRepository):base(usuarioRepository)
         {
             this.usuarioRepository = usuarioRepository;
-        }
-
-        public void Add(Usuario usuario)
-        {
-            usuarioRepository.Add(usuario);
-        }
-
-        public void Delete(Usuario usuario)
-        {
-            usuarioRepository.Delete(usuario);
-        }
-
-        public IList<Usuario> FindAll()
-        {
-            return usuarioRepository.FindAll();
-        }       
-
-        public Usuario GetbyId(int id)
-        {
-            return usuarioRepository.GetbyId(id);
         }
     }
 }

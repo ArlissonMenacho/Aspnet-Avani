@@ -8,33 +8,13 @@ using Montadora_Arlisson_Menacho.Models;
 
 namespace Montadora_Arlisson_Menacho.Services
 {
-    public class MontadorServices
+    public class MontadorServices : ServiceBase<Montador>
     {
         private readonly MontadorRepository MontadorRepository;
 
-        public MontadorServices(MontadorRepository montadorRepository)
+        public MontadorServices(MontadorRepository montadorRepository):base(montadorRepository)
         {
             this.MontadorRepository = montadorRepository;
-        }
-
-        public void Add(Montador montador)
-        {
-            MontadorRepository.Add(montador);
-        }
-
-        public void Delete(Montador montador)
-        {
-            MontadorRepository.Delete(montador);
-        }
-
-        public IList<Montador> FindAll()
-        {
-            return MontadorRepository.FindAll();
-        }
-               
-        public Montador GetbyId(int id)
-        {
-            return MontadorRepository.GetbyId(id);
         }
     }
 }

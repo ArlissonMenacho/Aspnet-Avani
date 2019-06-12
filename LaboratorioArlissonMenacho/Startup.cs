@@ -36,7 +36,7 @@ namespace LaboratorioArlissonMenacho
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
-            var conexaoString = @"Server=LAB04-18;Integrated Security=true;Initial Catalog=bd_laboratorio;";
+            var conexaoString = @"Server=DESKTOP-QB59URO;Integrated Security=true;Initial Catalog=bd_laboratorio;";
             services.AddDbContext<LaboratorioContexto>(options=>options.UseSqlServer(conexaoString));
 
             ////isso serve para localizar o BD como BDLocal independente de onde for.

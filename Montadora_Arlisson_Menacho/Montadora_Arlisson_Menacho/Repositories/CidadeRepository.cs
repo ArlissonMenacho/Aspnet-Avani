@@ -7,41 +7,14 @@ using Montadora_Arlisson_Menacho.Contexto;
 
 namespace Montadora_Arlisson_Menacho.Repositories
 {
-    public class CidadeRepository
+    public class CidadeRepository : RepositoryBase<Cidade>
     {
         private readonly MontadoraContexto db;
 
-        public CidadeRepository(MontadoraContexto montadoraContexto)
+        public CidadeRepository(MontadoraContexto montadoraContexto):base(montadoraContexto)
         {
             this.db = montadoraContexto;
         }
-
-        public void Add(Cidade cidade)
-        {
-            db.Cidades.Add(cidade);
-            db.SaveChanges();
-        }
-
-        public void Delete(Cidade cidade)
-        {
-            db.Cidades.Remove(cidade);
-            db.SaveChanges();
-        }
-
-        public IList<Cidade> FindAll()
-        {
-            return db.Cidades.ToList();
-        }
-
-        //public IList<Cidade> getByDescricao(String descricao)
-        //{
-        //    return db.Cidades.Where(p => p.Descricao.Contains(descricao)).ToList();
-
-        //}
-
-        public Cidade GetbyId(int id)
-        {
-            return db.Cidades.Find(id);
-        }
+      
     }
 }

@@ -8,39 +8,13 @@ using Montadora_Arlisson_Menacho.Repositories;
 
 namespace Montadora_Arlisson_Menacho.Services
 {
-    public class CidadeServices
+    public class CidadeServices : ServiceBase<Cidade>
     {
         private readonly CidadeRepository cidadeRepository;
 
-        public CidadeServices(CidadeRepository cidadeRepository)
+        public CidadeServices(CidadeRepository cidadeRepository):base(cidadeRepository)
         {
             this.cidadeRepository = cidadeRepository;
-        }
-
-        public void Add(Cidade cidade)
-        {
-            cidadeRepository.Add(cidade);
-        }
-
-        public void Delete(Cidade cidade)
-        {
-            cidadeRepository.Delete(cidade);
-        }
-
-        public IList<Cidade> FindAll()
-        {
-            return cidadeRepository.FindAll();
-        }
-
-        //public IList<Cidade> getByDescricao(String descricao)
-        //{
-        //    return cidadeRepository.getByDescricao(descricao);
-
-        //}
-
-        public Cidade GetbyId(int id)
-        {
-            return cidadeRepository.GetbyId(id);
-        }
+        }        
     }
 }
